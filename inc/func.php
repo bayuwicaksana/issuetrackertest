@@ -41,7 +41,8 @@ class func {
  
         if ($stmt->execute()) {
 			$issueList = array();
-            while ($row = $stmt->get_result()->fetch_assoc()) {
+			$result = $stmt->get_result();
+            while ($row = $result->fetch_assoc()) {
 				$issueList[] = $row;
 			}
             $stmt->close();
